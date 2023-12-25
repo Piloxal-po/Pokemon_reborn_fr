@@ -1,6 +1,8 @@
 # Pokemon_reborn_fr
 Traduction de pokemon reborn fr
 
+Download link : [HERE](https://codeload.github.com/Piloxal-po/Pokemon_reborn_fr/zip/refs/heads/main)
+
 # EN
 
 Here is the difference between the original version and the FR version: https://github.com/Piloxal-po/Pokemon_reborn_fr/compare/reborn_fr/base...main
