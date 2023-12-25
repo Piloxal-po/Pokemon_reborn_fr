@@ -324,7 +324,12 @@ class Scene_Trade
     itemname=pkmn.item==0 ? _INTL("NO ITEM") : PBItems.getName(pkmn.item)
     imagepos = []
     @overlay2.bitmap.clear
-    @typebitmap=RPG::Cache.load_bitmap(_INTL("Graphics/Pictures/types.png"))
+    
+    if LANGUAGES.length>=2
+      @typebitmap=RPG::Cache.load_bitmap(_INTL("Graphics/Pictures/types_" + LANGUAGES[$idk[:settings].language][1] + ".png"))
+    else
+      @typebitmap=RPG::Cache.load_bitmap(_INTL("Graphics/Pictures/types.png"))
+    end
     @spritehidden[@index-1].visible = true 
     @chosenpokemon = false
     move0 = pkmn.moves[0].id == 0 ? "--" : PBMoves.getName(pkmn.moves[0].id)

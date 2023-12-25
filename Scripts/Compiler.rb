@@ -2130,7 +2130,7 @@ def pbCompileAllData(mustcompile)
   #pbCombineScripts
   MessageTypes.saveMessages
   if !$INEDITOR && LANGUAGES.length>=2
-    pbLoadMessages("Data/"+LANGUAGES[$idk[:settings].language][1])
+    pbLoadMessages("Data/"+LANGUAGES[$idk[:settings].language][1] + ".dat")
   end
   totalcompilertime = Time.now - compilerruntime
   #print totalcompilertime

@@ -326,7 +326,11 @@ class PokeSelectionSprite < SpriteWrapper
     @text=nil
     @pkmnsprite=PokemonIconSprite.new(pokemon,viewport)
     @pkmnsprite.active=active
-    @statuses=AnimatedBitmap.new(_INTL("Graphics/Pictures/statuses"))
+    if LANGUAGES.length>=2
+      @statuses=AnimatedBitmap.new(_INTL("Graphics/Pictures/statuses_" + LANGUAGES[$idk[:settings].language][1]))
+    else
+      @statuses=AnimatedBitmap.new(_INTL("Graphics/Pictures/statuses"))
+    end
     @hpbar=AnimatedBitmap.new("Graphics/Pictures/Party/partyHP")
     @hpbarfnt=AnimatedBitmap.new("Graphics/Pictures/Party/partyHPfnt")
     @hpbarswap=AnimatedBitmap.new("Graphics/Pictures/Party/partyHP")

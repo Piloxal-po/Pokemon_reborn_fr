@@ -2528,7 +2528,11 @@ class PokemonStorageScene
         imagepos=[(["Graphics/Pictures/shiny",156,198,0,0,-1,-1])]
         pbDrawImagePositions(overlay,imagepos)
       end
-      typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/types"))
+      if LANGUAGES.length>=2
+        @typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/types_" + LANGUAGES[$idk[:settings].language][1]))
+      else
+        @typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/types"))
+      end
       type1rect=Rect.new(0,pokemon.type1*28,64,28)
       type2rect=Rect.new(0,pokemon.type2*28,64,28)
       if pokemon.type1==pokemon.type2

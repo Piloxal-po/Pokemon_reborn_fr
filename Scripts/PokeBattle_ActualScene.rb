@@ -169,7 +169,11 @@ class CommandMenuButtons < BitmapSprite
     self.x=Graphics.width-260
     self.y=Graphics.height-96
     @mode=mode
-    @buttonbitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/Battle/battleCommandButtons"))
+    if LANGUAGES.length>=2
+      @buttonbitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/Battle/battleCommandButtons_" + LANGUAGES[$idk[:settings].language][1]))
+    else
+      @buttonbitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/Battle/battleCommandButtons"))
+    end
     refresh(index,mode)
   end
 
@@ -371,7 +375,11 @@ class FightMenuButtons < BitmapSprite
     self.y=Graphics.height-96-UPPERGAP
     pbSetNarrowFont(self.bitmap)
     @buttonbitmap=AnimatedBitmap.new("Graphics/Pictures/Battle/battleFightButtons")
-    @typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/types"))
+    if LANGUAGES.length>=2
+      @typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/types_" + LANGUAGES[$idk[:settings].language][1]))
+    else
+      @typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/types"))
+    end
     @megaevobitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/Battle/battleMegaEvo"))
     @ultraburstbitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/Battle/battleMegaEvo"))
     @zmovebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/Battle/battleZMove"))
@@ -725,7 +733,11 @@ class PokemonDataBox < SpriteWrapper
           @spriteY=PokeBattle_SceneConstants::FOEBOX_Y
       end
     end
-    @statuses=AnimatedBitmap.new(_INTL("Graphics/Pictures/Battle/battleStatuses"))
+    if LANGUAGES.length>=2
+      @statuses=AnimatedBitmap.new(_INTL("Graphics/Pictures/Battle/battleStatuses_" + LANGUAGES[$idk[:settings].language][1]))
+    else
+      @statuses=AnimatedBitmap.new(_INTL("Graphics/Pictures/Battle/battleStatuses"))
+    end
     @contents=BitmapWrapper.new(@databox.width,@databox.height)
     self.bitmap=@contents
     self.visible=false

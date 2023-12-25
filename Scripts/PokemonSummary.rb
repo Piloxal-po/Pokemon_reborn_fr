@@ -74,7 +74,13 @@ class PokemonSummaryScene
     @partyindex=partyindex
     @pokemon=@party[@partyindex]
     @sprites={}
-    @typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/types"))
+    if LANGUAGES.length>=2
+      @typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/types_" + LANGUAGES[$idk[:settings].language][1]))
+      @statuses="Graphics/Pictures/statuses_" + LANGUAGES[$idk[:settings].language][1]
+    else
+      @typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/types"))
+      @statuses="Graphics/Pictures/statuses"
+    end
     @sprites["background"]=IconSprite.new(0,0,@viewport)
     @sprites["overlay"]=BitmapSprite.new(Graphics.width,Graphics.height,@viewport)
     @sprites["pokemon"]=PokemonSprite.new(@viewport)
@@ -168,7 +174,7 @@ class PokemonSummaryScene
       status=6 if pbPokerus(pokemon)==1
       status=@pokemon.status-1 if @pokemon.status>0
       status=5 if pokemon.hp==0
-      imagepos.push(["Graphics/Pictures/statuses",124,100,0,16*status,44,16])
+      imagepos.push([@statuses,124,100,0,16*status,44,16])
     end
     if pokemon.isShiny?
       imagepos.push([sprintf("Graphics/Pictures/shiny"),2,134,0,0,-1,-1])
@@ -312,7 +318,7 @@ class PokemonSummaryScene
       status=6 if pbPokerus(pokemon)==1
       status=@pokemon.status-1 if @pokemon.status>0
       status=5 if pokemon.hp==0
-      imagepos.push(["Graphics/Pictures/statuses",124,100,0,16*status,44,16])
+      imagepos.push([@statuses,124,100,0,16*status,44,16])
     end
     if pokemon.isShiny?
       imagepos.push([sprintf("Graphics/Pictures/shiny"),2,134,0,0,-1,-1])
@@ -445,7 +451,7 @@ class PokemonSummaryScene
       status=6 if pbPokerus(pokemon)==1
       status=@pokemon.status-1 if @pokemon.status>0
       status=5 if pokemon.hp==0
-      imagepos.push(["Graphics/Pictures/statuses",124,100,0,16*status,44,16])
+      imagepos.push([@statuses,124,100,0,16*status,44,16])
     end
     if pokemon.isShiny?
       imagepos.push([sprintf("Graphics/Pictures/shiny"),2,134,0,0,-1,-1])
@@ -524,7 +530,7 @@ class PokemonSummaryScene
       status=6 if pbPokerus(pokemon)==1
       status=@pokemon.status-1 if @pokemon.status>0
       status=5 if pokemon.hp==0
-      imagepos.push(["Graphics/Pictures/statuses",124,100,0,16*status,44,16])
+      imagepos.push([@statuses,124,100,0,16*status,44,16])
     end
     if pokemon.isShiny?
       imagepos.push([sprintf("Graphics/Pictures/shiny"),2,134,0,0,-1,-1])
@@ -609,7 +615,7 @@ class PokemonSummaryScene
       status=6 if pbPokerus(pokemon)==1
       status=@pokemon.status-1 if @pokemon.status>0
       status=5 if pokemon.hp==0
-      imagepos.push(["Graphics/Pictures/statuses",124,100,0,16*status,44,16])
+      imagepos.push([@statuses,124,100,0,16*status,44,16])
     end
     if pokemon.isShiny?
       imagepos.push([sprintf("Graphics/Pictures/shiny"),2,134,0,0,-1,-1])

@@ -73,7 +73,11 @@ class MoveRelearnerScene
     @sprites["msgwindow"]=Window_AdvancedTextPokemon.new("")
     @sprites["msgwindow"].visible=false
     @sprites["msgwindow"].viewport=@viewport
-    @typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/types"))
+    if LANGUAGES.length>=2
+      @typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/types_" + LANGUAGES[$idk[:settings].language][1]))
+    else
+      @typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/types"))
+    end
     pbDrawMoveList
     pbDeactivateWindows(@sprites)
     # Fade in all sprites

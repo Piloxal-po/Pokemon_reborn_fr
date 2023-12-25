@@ -724,7 +724,11 @@ class PokemonPokedexScene
       end
 =end
       pbDrawImagePositions(@sprites["overlay"].bitmap,[["Graphics/Pictures/Pokedex/pokedexOwned",212,42,0,0,-1,-1]])
-      typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/Pokedex/pokedexTypes"))
+      if LANGUAGES.length>=2
+        typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/Pokedex/pokedexTypes_" + LANGUAGES[$idk[:settings].language][1]))
+      else
+        typebitmap=AnimatedBitmap.new(_INTL("Graphics/Pictures/Pokedex/pokedexTypes"))
+      end
       type1rect=Rect.new(0,type1*32,96,32)
       type2rect=Rect.new(0,type2*32,96,32)
       @sprites["overlay"].bitmap.blt(296,118,typebitmap.bitmap,type1rect)
