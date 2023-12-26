@@ -3,9 +3,19 @@ Traduction de pokemon reborn fr
 
 Download link : [HERE](https://codeload.github.com/Piloxal-po/Pokemon_reborn_fr/zip/refs/heads/main)
 
+Traduction link : [HERE](https://raw.githubusercontent.com/Piloxal-po/Pokemon_reborn_fr/main/Data/fr.dat)
+
 # EN
 
 Here is the difference between the original version and the FR version: https://github.com/Piloxal-po/Pokemon_reborn_fr/compare/reborn_fr/base...main
+
+## Update the translation after the first installation
+
+Download [this file](https://raw.githubusercontent.com/Piloxal-po/Pokemon_reborn_fr/main/Data/fr.dat).
+
+put it in the Pokémon Reborn Data folder.
+
+You are now up to date with the translation
 
 ## Current status
 
@@ -43,6 +53,14 @@ For the moment, I'm modifying the Pokémon Reborn code directly, but my long-ter
 # FR
 
 Voici la différence entre la version originelle et la version FR : https://github.com/Piloxal-po/Pokemon_reborn_fr/compare/reborn_fr/base...main
+
+## Mettre à jour la traduction après la première installation
+
+Télécharger [ce fichier](https://raw.githubusercontent.com/Piloxal-po/Pokemon_reborn_fr/main/Data/fr.dat).
+
+mettez-le dans le dossier Data de Pokémon Reborn.
+
+Vous êtes maintenant à jour avec la traduction
 
 ## Etat actuel
 
